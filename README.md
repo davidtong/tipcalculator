@@ -1,2 +1,3 @@
-tipcalculator
+TipCalculator
 =============
+![Video Walkthrough](tipcalculator.gif)
