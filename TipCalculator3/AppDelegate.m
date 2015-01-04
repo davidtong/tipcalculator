@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "TipViewController.h"
 
+
 @interface AppDelegate ()
 
 @end
@@ -17,7 +18,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     
     TipViewController *vc = [[TipViewController alloc] init];
     
