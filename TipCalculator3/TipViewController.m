@@ -18,7 +18,7 @@
 
 - (IBAction)onTap:(id)sender;
 - (void)updateValues;
-- (IBAction)onValueChange:(id)sender;
+- (IBAction)editingChanged:(id)sender;
 
 @end
 
@@ -31,6 +31,8 @@
     // @NOTE(dtong) Add Settings button on init. Set default title and bind action
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(onSettingsButton)];
     
+    
+    
     [self readAndSetUserDefaults];
 }
 
@@ -38,7 +40,11 @@
     [self readAndSetUserDefaults];
     
     // set default focus
-    //[self.billTextField becomeFirstResponder];
+    [self.billTextField becomeFirstResponder];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self resignFirstResponder];
 }
 
 - (void)readAndSetUserDefaults {
@@ -84,8 +90,7 @@
  * @NOTE(dtong) Tap handler of main app
  **/
 - (IBAction)onTap:(id)sender {
-    // exception
-    // [self.view endEditing:YES];
+    [self.view endEditing:YES];
     
     [self updateValues];
 }
@@ -109,7 +114,8 @@
 /**
  * @NOTE(dtong) On Change handler of value input
  **/
-- (IBAction)onValueChange:(id)sender {
+- (IBAction)editingChanged:(id)sender {
     [self updateValues];
 }
+
 @end

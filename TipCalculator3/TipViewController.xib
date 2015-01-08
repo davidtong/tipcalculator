@@ -47,6 +47,12 @@
                     <color key="textColor" red="0.97490875389999998" green="1" blue="0.96419937440000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yS5-H0-MlI">
+                    <rect key="frame" x="71" y="219" width="326" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="0.97490875389999998" green="1" blue="0.96419937440000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zgd-EE-9fJ">
                     <rect key="frame" x="28" y="315" width="369" height="29"/>
                     <color key="backgroundColor" red="0.73752944359999995" green="0.88379093730000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -63,42 +69,36 @@
                         <action selector="onValueChange:" destination="-1" eventType="valueChanged" id="NJf-V0-Vir"/>
                     </connections>
                 </segmentedControl>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Total Amount (before tips)" textAlignment="right" minimumFontSize="18" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IYw-aI-cq8">
-                    <rect key="frame" x="133" y="93" width="264" height="30"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <color key="tintColor" red="1" green="0.95990218634416768" blue="0.4321260525373426" alpha="1" colorSpace="calibratedRGB"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="light" returnKeyType="go"/>
-                    <connections>
-                        <action selector="billTextField:" destination="-1" eventType="editingDidEnd" id="QpV-kg-3Uv"/>
-                    </connections>
-                </textField>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJH-5c-0I6">
                     <rect key="frame" x="340" y="18" width="57" height="30"/>
                     <state key="normal" title="Settings">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yS5-H0-MlI">
-                    <rect key="frame" x="71" y="219" width="326" height="41"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <color key="textColor" red="0.97490875389999998" green="1" blue="0.96419937440000003" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Total Amount (before tips)" textAlignment="right" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="IYw-aI-cq8">
+                    <rect key="frame" x="133" y="93" width="264" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" red="1" green="0.95990218634416768" blue="0.4321260525373426" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="light"/>
+                    <connections>
+                        <action selector="editingChanged:" destination="-1" eventType="editingChanged" id="VbP-hH-giF"/>
+                    </connections>
+                </textField>
             </subviews>
             <color key="backgroundColor" red="0.73752944361330597" green="0.88379093728518887" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <gestureRecognizers/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outletCollection property="gestureRecognizers" destination="XfJ-IB-bqE" appends="YES" id="nBo-wt-gZH"/>
+                <outletCollection property="gestureRecognizers" destination="vlu-8O-fbe" appends="YES" id="s96-qm-R1X"/>
             </connections>
             <point key="canvasLocation" x="105" y="154"/>
         </view>
-        <tapGestureRecognizer id="XfJ-IB-bqE">
+        <tapGestureRecognizer id="vlu-8O-fbe">
             <connections>
-                <action selector="onTap:" destination="-1" id="ne9-Z6-g4f"/>
+                <action selector="onTap:" destination="-1" id="CCx-pT-gqO"/>
             </connections>
         </tapGestureRecognizer>
     </objects>
